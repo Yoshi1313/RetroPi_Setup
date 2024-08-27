@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-# This file is part of The RetroPie Project
+# This file is part of The RetroDeck Project
 #
-# The RetroPie Project is the legal property of its developers, whose names are
+# The RetroDeck Project is the legal property of its developers, whose names are
 # too numerous to list here. Please refer to the COPYRIGHT.md file distributed with this source.
-#
-# See the LICENSE.md file at the top-level directory of this distribution and
-# at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
 __version="4.8.8"
@@ -14,7 +11,7 @@ __version="4.8.8"
 [[ "$__debug" -eq 1 ]] && set -x
 
 # main retropie install location
-rootdir="/opt/retropie"
+rootdir="/opt/retrodeck"
 
 # if __user is set, try and install for that user, else use SUDO_USER
 if [[ -n "$__user" ]]; then
@@ -29,7 +26,7 @@ else
 fi
 
 home="$(eval echo ~$user)"
-datadir="$home/RetroPie"
+datadir="$home/RetroDeck"
 biosdir="$datadir/BIOS"
 romdir="$datadir/roms"
 emudir="$rootdir/emulators"
@@ -49,7 +46,7 @@ if [[ "$(id -u)" -ne 0 ]]; then
     exit 1
 fi
 
-__backtitle="retropie.org.uk - RetroPie Setup. Installation folder: $rootdir for user $user"
+__backtitle="RetroDeck Setup - Install folder: $rootdir for user $user"
 
 source "$scriptdir/scriptmodules/system.sh"
 source "$scriptdir/scriptmodules/helpers.sh"
